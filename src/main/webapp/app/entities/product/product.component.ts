@@ -33,7 +33,9 @@ export class ProductComponent implements OnInit, OnDestroy {
     protected router: Router,
     protected eventManager: JhiEventManager,
     protected modalService: NgbModal
-  ) {}
+  ) {
+    this.filter = '';
+  }
 
   loadPage(page?: number): void {
     const pageToLoad: number = page || this.page;
