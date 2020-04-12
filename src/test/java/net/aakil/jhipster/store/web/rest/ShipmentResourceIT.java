@@ -2,6 +2,7 @@ package net.aakil.jhipster.store.web.rest;
 
 import net.aakil.jhipster.store.StoreApp;
 import net.aakil.jhipster.store.domain.Shipment;
+import net.aakil.jhipster.store.domain.Invoice;
 import net.aakil.jhipster.store.repository.ShipmentRepository;
 import net.aakil.jhipster.store.service.ShipmentService;
 
@@ -67,6 +68,16 @@ public class ShipmentResourceIT {
             .trackingCode(DEFAULT_TRACKING_CODE)
             .date(DEFAULT_DATE)
             .details(DEFAULT_DETAILS);
+        // Add required entity
+        Invoice invoice;
+        if (TestUtil.findAll(em, Invoice.class).isEmpty()) {
+            invoice = InvoiceResourceIT.createEntity(em);
+            em.persist(invoice);
+            em.flush();
+        } else {
+            invoice = TestUtil.findAll(em, Invoice.class).get(0);
+        }
+        shipment.setInvoice(invoice);
         return shipment;
     }
     /**
@@ -80,6 +91,16 @@ public class ShipmentResourceIT {
             .trackingCode(UPDATED_TRACKING_CODE)
             .date(UPDATED_DATE)
             .details(UPDATED_DETAILS);
+        // Add required entity
+        Invoice invoice;
+        if (TestUtil.findAll(em, Invoice.class).isEmpty()) {
+            invoice = InvoiceResourceIT.createUpdatedEntity(em);
+            em.persist(invoice);
+            em.flush();
+        } else {
+            invoice = TestUtil.findAll(em, Invoice.class).get(0);
+        }
+        shipment.setInvoice(invoice);
         return shipment;
     }
 
