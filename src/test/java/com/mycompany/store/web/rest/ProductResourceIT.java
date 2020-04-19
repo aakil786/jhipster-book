@@ -31,7 +31,8 @@ import com.mycompany.store.domain.enumeration.Size;
 @SpringBootTest(classes = StoreApp.class)
 
 @AutoConfigureMockMvc
-@WithMockUser
+@WithMockUser(username="admin", authorities={"ROLE_ADMIN"},
+    password = "admin")
 public class ProductResourceIT {
 
     private static final String DEFAULT_NAME = "AAAAAAAAAA";

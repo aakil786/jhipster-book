@@ -34,7 +34,8 @@ import com.mycompany.store.domain.enumeration.PaymentMethod;
 @SpringBootTest(classes = StoreApp.class)
 
 @AutoConfigureMockMvc
-@WithMockUser
+@WithMockUser(username="admin", authorities={"ROLE_ADMIN"},
+    password = "admin")
 public class InvoiceResourceIT {
 
     private static final Instant DEFAULT_DATE = Instant.ofEpochMilli(0L);

@@ -31,7 +31,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = StoreApp.class)
 
 @AutoConfigureMockMvc
-@WithMockUser
+@WithMockUser(username="admin", authorities={"ROLE_ADMIN"},
+    password = "admin")
 public class ShipmentResourceIT {
 
     private static final String DEFAULT_TRACKING_CODE = "AAAAAAAAAA";

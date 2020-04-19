@@ -30,7 +30,8 @@ import com.mycompany.store.domain.enumeration.Gender;
 @SpringBootTest(classes = StoreApp.class)
 
 @AutoConfigureMockMvc
-@WithMockUser
+@WithMockUser(username="admin", authorities={"ROLE_ADMIN"},
+    password = "admin")
 public class CustomerResourceIT {
 
     private static final String DEFAULT_FIRST_NAME = "AAAAAAAAAA";

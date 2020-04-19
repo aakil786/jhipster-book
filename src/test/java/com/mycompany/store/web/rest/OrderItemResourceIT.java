@@ -32,7 +32,8 @@ import com.mycompany.store.domain.enumeration.OrderItemStatus;
 @SpringBootTest(classes = StoreApp.class)
 
 @AutoConfigureMockMvc
-@WithMockUser
+@WithMockUser(username="admin", authorities={"ROLE_ADMIN"},
+    password = "admin")
 public class OrderItemResourceIT {
 
     private static final Integer DEFAULT_QUANTITY = 0;
