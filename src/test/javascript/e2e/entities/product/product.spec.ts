@@ -29,7 +29,7 @@ describe('Product e2e test', () => {
     productComponentsPage = new ProductComponentsPage();
     await browser.wait(ec.visibilityOf(productComponentsPage.title), 5000);
     expect(await productComponentsPage.getTitle()).to.eq('storeApp.product.home.title');
-    await browser.wait(ec.or(ec.visibilityOf(productComponentsPage.entities), ec.visibilityOf(productComponentsPage.noResult)), 1000);
+    await browser.wait(ec.or(ec.visibilityOf(productComponentsPage.entities), ec.visibilityOf(productComponentsPage.noResult)), 5000);
   });
 
   it('should load create Product page', async () => {
