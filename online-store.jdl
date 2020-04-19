@@ -24,7 +24,7 @@ application {
     messageBroker false
     nativeLanguage en
     otherModules []
-    packageName net.aakil.jhipster.store
+    packageName com.mycompany.store
     prodDatabaseType postgresql
     searchEngine false
     serverPort 8080
