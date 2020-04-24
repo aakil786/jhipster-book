@@ -383,7 +383,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
-                    <forkedProcessExitTimeoutInSeconds>150</forkedProcessExitTimeoutInSeconds>
+                    <forkCount>0</forkCount>
+<!--                    <forkedProcessExitTimeoutInSeconds>150</forkedProcessExitTimeoutInSeconds>-->
                     <argLine>-Xmx2048</argLine>
                 </configuration>
             </plugin>
