@@ -369,8 +369,7 @@
 <!--                        <databaseSchema>MY_TEST_SCHEMA_${surefire.forkNumber}</databaseSchema>-->
 <!--                    </systemPropertyVariables>-->
 <!--                    <workingDirectory>FORK_DIRECTORY_${surefire.forkNumber}</workingDirectory>-->
-                    <forkedProcessExitTimeoutInSeconds>150</forkedProcessExitTimeoutInSeconds>
-                </configuration>
+                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -383,6 +382,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <forkedProcessExitTimeoutInSeconds>150</forkedProcessExitTimeoutInSeconds>
+                    <argLine>-Xmx2048</argLine>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.jacoco</groupId>
