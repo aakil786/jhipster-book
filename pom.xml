@@ -369,6 +369,7 @@
 <!--                        <databaseSchema>MY_TEST_SCHEMA_${surefire.forkNumber}</databaseSchema>-->
 <!--                    </systemPropertyVariables>-->
 <!--                    <workingDirectory>FORK_DIRECTORY_${surefire.forkNumber}</workingDirectory>-->
+                    <forkedProcessExitTimeoutInSeconds>150</forkedProcessExitTimeoutInSeconds>
                 </configuration>
             </plugin>
             <plugin>
